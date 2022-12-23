@@ -1,0 +1,542 @@
+1(a) 1s compliment
+n=int(input())
+n=bin(n).replace("0b"," ")
+print(n)
+inverted=" "
+for i in n:
+    if i=='0':
+        inverted=inverted+'1'
+    else:
+        inverted=inverted+'0'
+print(inverted)
+print(int(inverted,2))
+1(b) product with out*
+N1=int(input())
+N2=int(input())
+p=n1/(1/n2)
+print(p)
+1(c)variables having same values points same object
+n1=int(input())
+n2=int(input())
+if(id(n1)==id(n2)):
+    print("yes")
+else:
+    print("no")
+2(a)check even or odd with out%
+n1=int(input())
+if n1&1==0:
+    print("even")
+else:
+    print("odd")
+ 2(b)extract kbits from p position
+ n=int(input())
+p=int(input())
+k=int(input())
+a=n>>(p-1)
+b=(1<<k)-1
+print(a&b)
+3********
+Check whther a given point lies on in out of circle
+Import math
+x1=int(input())
+y1=int(input())
+x2=int(input())
+y2=int(input())
+r=int(input())
+d1=x1-x2
+d2=y1-y2
+p1=math.pow(d1,2)
+p2=math.pow(d2,2)
+d=math.sqrt(p1+p2)
+if(d<r):
+    print("inside")
+elif(d>r):
+    print("outside")
+else:
+    print("on")
+4*****
+Find sum of digits in a given integer
+n=int(input())
+s=0
+while(n>0):
+    rem=n%10
+    s=rem+s
+    n=n//10
+print(s)
+5******
+ To display Area of a given figure
+while(True):
+    N = int(input("Enter N value"))
+    if (N==1):
+        r = int(input("Enter radius"))
+        area = 3.14*(r)**2
+        print(area)
+    elif (N==2):
+        l = int(input("Enter length"))
+        b = int(input("Enter breadth"))
+        area = l*b
+        print(area)
+    elif (N==3):
+        a = int(input("Enter 1st side"))
+        b = int(input("Enter 2nd side"))  
+        c = int(input("Enter 3rd side"))
+        s = (a+b+c)/2
+        area = (s*(s-a)(s-b)(s-c))**0.5
+        print(area)
+    else:
+        print("Enter the input correctly")
+        break
+6*********
+semiprimes
+n=int(input("Enter the number:"))
+prime=[]
+semiprime=[]
+list=[]
+for i in range(2,n):
+    for j in range(2,i):
+        if(i%j==0):
+            break
+    else:
+        prime.append(i)
+for i in prime:
+    for j in prime:
+        if i!=j and i*j<n:
+            semiprime.append(i*j)
+for i in semiprime:
+    for j in semiprime:
+        if(i+j<=n):
+            list.append(i+j)
+if n in list:
+    print("yes")
+else:
+    print("no")
+7********
+Currency notes
+def countCurrency(amount):   
+    notes = [2000, 500, 200, 100, 50, 20, 10, 5, 1]
+    notesCount = {}
+     for note in notes:
+        if amount >= note:notesCount[note] = amount//note
+     amount = amount % note
+ print ("Currency Count:")
+    for key, val in notesCount.items():
+        print(f"{key} : {val}")
+ amount=int(input("Enter amount: "))
+countCurrency(amount)
+8**********
+Text wrap
+import textwrap
+def solve(s,w):
+    return textwrap.fill(s,w)
+s=str(input("Enter string"))
+w=int(input("Enter width"))
+print(solve(s,w))
+9*************
+Measure time
+import time
+n=int(input("enter n::"))
+l=[]
+print("enter n elements::")
+for i in range(n):
+    ele=int(input())
+    l.append(ele)
+s_t=time.time()
+print("firsttime by list",l[4])
+e_d=time.time()
+t=e_d-s_t
+print("time",t)
+s_t=time.time()
+print("secondtime by list",l[-2])
+e_d=time.time()
+t=e_d-s_t
+print("time",t)
+s_t=time.time()
+print("third time by list",l[0])
+e_d=time.time()
+t=e_d-s_t
+print("time",t)
+l1=tuple(l)
+s_t=time.time()
+print("firsttime by list",l1[4])
+e_d=time.time()
+t=e_d-s_t
+print("time",t)
+s_t=time.time()
+print("secondtime by list",l1[-2])
+e_d=time.time()
+t=e_d-s_t
+print("time",t)
+s_t=time.time()
+print("third time by list",l1[0])
+e_d=time.time()
+t=e_d-s_t
+print("time",t)
+10******
+Sum of list elements
+n=int(input())
+l1=[]
+for i in range(n):
+    el=int(input())
+    l1.append(el)
+l2=l1[::-1]
+l3=[]
+print("Reversed list:=",l2)
+for i in range(n):
+    l3.append(l1[i]+l2[i])
+print("Sum=",l3)
+11***************
+Cubes dict
+n=int(input("Enter a number : "))
+d={i:i*i*i for i in range (1,n+1)}
+print(d)
+12******
+Student info
+l=[]
+n=int(input("enter no of students"))
+print("enter",n,"student details(name,regno,marks,phno)")
+l=[]
+for i in range (n):
+    name=input()
+    regno=int(input())
+    marks=int(input())
+    phno=int(input())
+    l.append([name,regno,marks,phno])
+l.sort(key=lambda x:x[2])
+print(l)
+13*******
+a-e
+remove vowels
+def no_vowels(st):
+    vowels=('A','E','I','O','U','a','e','i','o','u')
+    no_vst=''
+    for ch in st:
+        if ch not in vowels:
+            no_vst+=ch
+    print('no vowel string : ',no_vst)
+
+def counting(st):
+    uc=lc=0
+    for ch in st:
+        if ch>='a' and ch<='z':
+            lc+=1
+        elif ch>='A' and ch<='Z':
+            uc+=1
+    print('upper count = ',uc)
+    print('lower count = ',lc)
+    
+def no_special(st):
+    specials=('!','@','#','$','%','^','&','*','(',')',"'",'<',',','.')
+    no_sst=''
+    for ch in st:
+        if ch not in specials:
+            no_sst+=ch
+    print('no special string : ',no_sst)
+    
+def is_palin(st):
+    i=0
+    j=len(st)-1
+    while i<j:
+        if st[i]!=st[j]:
+            break
+        i+=1
+        j-=1
+    if i>=j:
+        print('palindrome')
+    else:
+        print('not  a palindrome')
+
+def swap_case(st):
+    sc_st=''
+    for ch in st:
+        if ch>='a' and ch<='z':
+            sc_st+=chr(ord(ch)-32)
+        elif ch>='A' and ch<='Z':
+            sc_st+=chr(ord(ch)+32)
+        else:
+            sc_st+=ch
+    print(sc_st)
+
+st=input ('Enter a string:')
+no_vowels(st)
+counting(st)
+no_special(st)
+is_palin(st)
+swap_case(st)
+14********
+median
+def median(x, y, z):
+ if y < x and x < z:
+  return x
+ elif z < x and x < y:
+  return x
+ elif z < y and y < x:
+  return y
+ elif x < y and y < z:
+  return y
+ elif x < z and z < y:
+  return z
+ elif y < z and z < x:
+  return z
+x=float(input("Enter x value: "))
+y=float(input("Enter y value:"))
+z=float(input("Enter z value:"))
+print ("Median is")
+print (median(x,y,z))
+15******
+a-f
+li1=[int(x) for x in input('Enter list 1 elements:').split()]
+li2=[int(x) for x in input('Enter list 2 elements:').split()]
+sum1=sum2=0
+mx1=mn1=li1[0]
+mx2=mn2=li2[0]
+cli=[]
+uli=[]
+flli=[]
+sumsli=[]
+maxsli=[]
+minsli=[]
+for x in li1:
+    if x in li2:
+        cli+=[x]
+    if x not in li2:
+        uli+=[x]
+    if x>mx1:
+        mx1=x
+    if x<mn1:
+        mn1=x
+    sum1+=x
+for x in li2:
+    sum2+=x
+    if x>mx2:
+        mx2=x
+    if x<mn2:
+        mn2=x
+flli+=[li1[0]]
+flli+=[li2[-1]]
+sumsli+=[sum1,sum2]
+maxsli+=[mx1,mx2]
+minsli+=[mn1,mn2]
+print('common elements:',cli)
+print('elements only in list 1:',uli)
+print('first last elements:',flli)
+print('sums list:',sumsli)
+print('largest elements:',maxsli)
+print('smallest elements:',minsli) 
+module2
+1***********
+permutations
+from itertools import permutations
+str1 =input("Enter a string: ")
+list2 = []
+list2[:0] = str1
+list1 = [lis.upper() for lis in list2]
+list1.sort(reverse=False)
+print("Sorted list:")
+print(list1)
+print("Possible Permutations")
+permList = permutations(list1,2)
+for perm in list(permList):
+    print (''.join(perm))
+permList = permutations(list1,3)
+for perm in list(permList):
+    print (''.join(perm))
+2*********
+pentagon
+import math
+def area(s):
+    Area=((3/2)**(1/3))*(s*s)
+    print(Area)
+def side(r):
+    return (2*r*(math.sin((math.pi)/5)))
+r=int(input("Enter length of vertex from centre of pentagon: "))
+s1=side(r)
+area(s1)
+3****************
+Date-day
+from datetime import * 
+x=input().split(" ")
+print(x)
+d=int(x[0])
+m=int(x[1])
+y=int(x[2])
+day=date(y,m,d)
+print(day.strftime("%a"))
+4***********
+Arun cab or walk
+import math
+n,v1,v2=input().split()
+n=int(n)
+v1=int(v1)
+v2=int(v2)
+d1=math.sqrt(2)*n
+d2=(2*n)
+tv1=d1/v1;
+tv2=d2/v2;
+if(tv1>tv2):
+    print("cab")
+else:
+    print("walk")
+5************
+Bin arr to bool arr
+import numpy as np
+arr=input().split()
+arr1=list(arr)
+arr2=np.array(arr1)
+bool_arr=np.array(arr2,dtype="bool")
+print(bool_arr)
+6************
+Data frame to series
+import pandas as pd
+d={'col1':[1,2,3,4,7,11],'col2':[4,5,6,4,5,0],'col3':[7,5,8,12,1,11]}
+df=pd.DataFrame(d)
+print(df)
+ser1=pd.Series(df['col1'])
+print(ser1)
+7**********
+Two files
+f1=open("file1.txt","w")
+f2=open("file2.txt","w")
+f1.write("red\ngreen\nyellow\n")
+f2.write("welcome to india\nyou san go\nwait")
+f1.close()
+f2.close()
+f1=open("file1.txt")
+f2=open("file2.txt")
+for i,j in zip(f1,f2):
+    print(i)
+    print(j) 
+8*******
+Handle errors
+x=int(input())
+y=int(input())
+try:
+    z=x/y
+    print(z)
+except:
+    print("value error")
+
+
+display value error
+x=int(input())
+y=int(input())
+try:
+    print(x)
+    print(y)
+except:
+    print("value error")
+    print('give input as integers')
+
+
+index error
+l=[1,2,3,4,5,6]
+i=int(input())
+try:
+    print(l[i])
+except:
+    print("index error")
+
+file not found error
+
+try:
+    fp=open("sample.txt")
+    print(fp)
+except:
+    print("file not found error")
+
+
+
+
+try:
+    f1=open("file1.txt","w")
+    f1.write("red\ngreen\nyellow\n")
+    f1.close()
+    f1=open("file1.txt")
+    for i in zip(f1):
+        print(i)
+except:
+    print("file not found error")
+9********
+Handle multiple exceptions use raise keyword
+a = int(input())
+b = int(input())
+try:
+    
+    if a < 0 or b < 0:
+        raise ZeroDivisionError
+    print(a/b)
+except ZeroDivisionError:
+    print("Please enter valid integer value")
+10*******
+Spiral hexagon
+import turtle as t
+def spiral(sides, trun, color, width):
+    pen = t.Turtle()
+    pen.color(color)
+    pen.width(width)
+    pen.speed(0)
+    for n in range(sides):
+        pen.forward(n)
+        pen.right(trun)
+spiral(150, 60, "cyan", 1)
+11*******
+Counter clock wise spiral
+def spiralPrint(m,n,a): 
+    k=0;l=0
+    
+    while(k<m and l<n):
+      
+        for i in range(l,n) : 
+            print(a[k][i],end=" ")
+        k += 1
+        for i in range(k,m) : 
+            print(a[i][n-1],end=" ") 
+        n -= 1
+        if(k<m):     
+            for i in range(n-1,(l-1),-1) : 
+                print(a[m-1][i], end = " ") 
+            m-=1
+        if(l<n):
+            for i in range(m - 1, k - 1, -1) : 
+                print(a[i][l],end=" ")
+            l+=1
+  
+
+R=int(input("Enter the number of rows:"))
+C=int(input("Enter the number of columns:"))
+a=[]
+print("Enter the elements of the matrix:")
+for i in range(R):
+    l=list(map(int,input().split(" ")))
+    a.append(l)
+print("The elements are taken out from the matrix in the clockwise spiral direction.")
+spiralPrint(R,C,a)
+12******
+Nearest prime no
+def prime(n): 
+	isprime = True 
+	if n<2: 
+		isprime = False 
+	else: 
+		for i in range(2,n): 
+			if n%i==0: 
+				isprime = False 
+				break 
+	return isprime 
+ 
+n = int(input("Enter a number: ")) 
+flag, i = True, 1 
+ 
+if prime(n): 
+	print("Closest prime number =",n) 
+else: 
+	while flag: 
+		if prime(n+i) and prime(n-i): 
+			print(n-i,"and",n+i,"are closest prime numbers") 
+			flag = False 
+		elif prime(n-i): 
+			print("Closest prime number =",n-i) 
+			flag = False 
+		elif prime(n+i): 
+			print("Closest prime number =",n+i) 
+			flag = False 
+		i += 1
